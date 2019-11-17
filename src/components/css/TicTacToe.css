@@ -1,0 +1,9 @@
+.Square{
+    width: 60px;
+    height: 60px;
+    color: blue;
+}
+.Center{
+    margin-left: auto ;
+    margin-right: auto;
+}
