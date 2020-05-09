@@ -30,7 +30,7 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "http://satyamrastogi.github.io/TIC-TAC-TOE",
+  "homepage": "http://satyamrastogi.github.io/tic-tac-toe",
   "devDependencies": {
     "gh-pages": "^2.2.0"
   }
