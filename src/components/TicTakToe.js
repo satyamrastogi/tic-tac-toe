@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import styles from './css/TicTacToe.css'     
+import './css/TicTacToe.css'     
 import ResetTickTacToe from './ResetTickTacToe';
 import Game from './Game'
 class TicTakToe extends Component {
@@ -40,14 +40,14 @@ class TicTakToe extends Component {
     checkWinner(){
         let validateBox = this.state.box;
         let turn = this.state.turn;
-        if(validateBox[0] === validateBox[3] && validateBox[0] === validateBox[6] && turn === validateBox[0] ||
-            validateBox[1] === validateBox[4] && validateBox[1] === validateBox[7] && validateBox[1] === turn||
-            validateBox[2] === validateBox[5] && validateBox[2] === validateBox[8] && validateBox[2] === turn ||
-            validateBox[0] === validateBox[4] && validateBox[0] === validateBox[8] && validateBox[0] === turn ||
-            validateBox[2] === validateBox[4] && validateBox[2] === validateBox[6] && validateBox[2] === turn ||
-            validateBox[0] === validateBox[1] && validateBox[0] === validateBox[2] && validateBox[0] === turn ||
-            validateBox[3] === validateBox[4] && validateBox[3] === validateBox[5] && validateBox[3] === turn ||
-            validateBox[6] === validateBox[7] && validateBox[6] === validateBox[8] && validateBox[6] === turn){
+        if((validateBox[0] === validateBox[3] && validateBox[0] === validateBox[6] && turn === validateBox[0]) ||
+            (validateBox[1] === validateBox[4] && validateBox[1] === validateBox[7] && validateBox[1] === turn )||
+            (validateBox[2] === validateBox[5] && validateBox[2] === validateBox[8] && validateBox[2] === turn) ||
+            (validateBox[0] === validateBox[4] && validateBox[0] === validateBox[8] && validateBox[0] === turn) ||
+            (validateBox[2] === validateBox[4] && validateBox[2] === validateBox[6] && validateBox[2] === turn) ||
+            (validateBox[0] === validateBox[1] && validateBox[0] === validateBox[2] && validateBox[0] === turn) ||
+            (validateBox[3] === validateBox[4] && validateBox[3] === validateBox[5] && validateBox[3] === turn) ||
+            (validateBox[6] === validateBox[7] && validateBox[6] === validateBox[8] && validateBox[6] === turn)){
                 this.setState({
                     winnerPlayer : turn
                 })
