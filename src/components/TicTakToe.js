@@ -174,14 +174,21 @@ class TicTakToe extends Component {
         }
     }
     handleOptionChange(value) {
+        let oldSelectedOption = this.state.selectedOption;
         this.setState({
-          selectedOption: value
+            selectedOption:value
         })
+        if(oldSelectedOption === 'HUMAN' && value==='BOT'){
+            this.botMove(this.state.box);
+            this.setState({
+                turn:player.human
+            })
+        }
     }
     render() {
         return (
             <div className ="center">
-                <h1>Unbeatable Tic Tac Toe B!tch</h1>
+                <h1>Unbeatable Tic Tac Toe</h1>
                 <p>player {this.state.turn} turn </p>
                  <Game box={this.state.box} markTurnHandler={this.markTurnHandler}></Game>
                 <ResetTickTacToe resetGame={this.resetGame}></ResetTickTacToe>
