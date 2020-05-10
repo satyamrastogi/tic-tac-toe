@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './css/TicTacToe.css'     
 import ResetTickTacToe from './ResetTickTacToe';
 import Game from './Game'
+import RadioButton from './RadioButton';
 const player = {
     human : "X",
     blank : undefined,
@@ -14,10 +15,11 @@ class TicTakToe extends Component {
             box :[],
             winnerPlayer :"",
             turn : player.human,
-            playWithNBot : false
+            selectedOption : "BOT"
         }
         this.markTurnHandler = this.markTurnHandler.bind(this);
         this.resetGame = this.resetGame.bind(this);
+        this.handleOptionChange = this.handleOptionChange.bind(this);
     }
    
     resetGame(){
@@ -55,7 +57,7 @@ class TicTakToe extends Component {
             alert("It is a tie");
             return;
         }
-        if(this.state.playWithNBot)
+        if(this.state.selectedOption === "BOT")
             this.botMove(this.state.box);
         else
             this.changeTurn();
@@ -171,6 +173,11 @@ class TicTakToe extends Component {
             })
         }
     }
+    handleOptionChange(value) {
+        this.setState({
+          selectedOption: value
+        })
+    }
     render() {
         return (
             <div className ="center">
@@ -178,9 +185,10 @@ class TicTakToe extends Component {
                 <p>player {this.state.turn} turn </p>
                  <Game box={this.state.box} markTurnHandler={this.markTurnHandler}></Game>
                 <ResetTickTacToe resetGame={this.resetGame}></ResetTickTacToe>
+                <RadioButton changeGameMode={this.handleOptionChange} selected={this.state.selectedOption}/>
             </div>
         )
     }
 }
 
-export default TicTakToe
+export default TicTakToe 
