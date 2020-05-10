@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import './css/TicTacToe.css';
 
 class ResetTickTacToe extends Component {
     constructor(props){
@@ -11,7 +12,7 @@ class ResetTickTacToe extends Component {
     render() {
         return (
             <div>
-                <button onClick={this.resetGame}>Reset</button>
+                <button className="btn"  onClick={this.resetGame}>Reset</button>
             </div>
         )
     }
